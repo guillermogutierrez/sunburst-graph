@@ -1,0 +1,239 @@
+{
+ "name": "cls",
+ "children": [
+  {
+   "name": "Santander UK",
+   "children": [
+    {
+     "name": "GBP",
+     "children": [
+      {"name": "January", "size": 1338},
+      {"name": "February", "size": 3152},
+      {"name": "March", "size": 674},
+      {"name": "April", "size": 3743},
+      {"name": "May", "size": 398},
+      {"name": "June", "size": 212},
+      {"name": "July", "size": 714},
+      {"name": "August", "size": 2743},
+      {"name": "September", "size": 5938},
+      {"name": "October", "size": 3812},
+      {"name": "November", "size": 714},
+      {"name": "December", "size": 5743}
+     ]
+    },
+    {
+     "name": "EUR",
+     "children": [
+      {"name": "January", "size": 393},
+      {"name": "February", "size": 3212},
+      {"name": "March", "size": 1714},
+      {"name": "April", "size": 7436},
+      {"name": "May", "size": 3393},
+      {"name": "June", "size": 812},
+      {"name": "July", "size": 1614},
+      {"name": "August", "size": 6743},
+      {"name": "September", "size": 938},
+      {"name": "October", "size": 312},
+      {"name": "November", "size": 3714},
+      {"name": "December", "size": 943}
+     ]
+    }
+   ]
+  },
+  {
+   "name": "HSBC",
+   "children": [
+    {
+     "name": "GBP",
+     "children": [
+      {"name": "January", "size": 338},
+      {"name": "February", "size": 5812},
+      {"name": "March", "size": 7714},
+      {"name": "April", "size": 343},
+      {"name": "May", "size": 398},
+      {"name": "June", "size": 6812},
+      {"name": "July", "size": 614},
+      {"name": "August", "size": 43},
+      {"name": "September", "size": 938},
+      {"name": "October", "size": 312},
+      {"name": "November", "size": 714},
+      {"name": "December", "size": 743}
+     ]
+    },
+    {
+     "name": "EUR",
+     "children": [
+      {"name": "January", "size": 38},
+      {"name": "February", "size": 12},
+      {"name": "March", "size": 64},
+      {"name": "April", "size": 7},
+      {"name": "May", "size": 39},
+      {"name": "June", "size": 3},
+      {"name": "July", "size": 6714},
+      {"name": "August", "size": 3},
+      {"name": "September", "size": 4938},
+      {"name": "October", "size": 12},
+      {"name": "November", "size": 14},
+      {"name": "December", "size": 3}
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Lloyds",
+   "children": [
+    {
+     "name": "GBP",
+     "children": [
+      {"name": "January", "size": 13938},
+      {"name": "February", "size": 23812},
+      {"name": "March", "size": 16714},
+      {"name": "April", "size": 2743},
+      {"name": "May", "size": 33938},
+      {"name": "June", "size": 43812},
+      {"name": "July", "size": 56714},
+      {"name": "August", "size": 2743},
+      {"name": "September", "size": 13938},
+      {"name": "October", "size": 23812},
+      {"name": "November", "size": 16714},
+      {"name": "December", "size": 3743}
+     ]
+    },
+    {
+     "name": "EUR",
+     "children": [
+      {"name": "January", "size": 38},
+      {"name": "February", "size": 12},
+      {"name": "March", "size": 67},
+      {"name": "April", "size": 74},
+      {"name": "May", "size": 39},
+      {"name": "June", "size": 32},
+      {"name": "July", "size": 64},
+      {"name": "August", "size": 3},
+      {"name": "September", "size": 38},
+      {"name": "October", "size": 32},
+      {"name": "November", "size": 14},
+      {"name": "December", "size": 43}
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Barclays",
+   "children": [
+    {
+     "name": "GBP",
+     "children": [
+      {"name": "January", "size": 3838},
+      {"name": "February", "size": 3212},
+      {"name": "March", "size": 6712},
+      {"name": "April", "size": 7543},
+      {"name": "May", "size": 3948},
+      {"name": "June", "size": 3412},
+      {"name": "July", "size": 5714},
+      {"name": "August", "size": 1743},
+      {"name": "September", "size": 2938},
+      {"name": "October", "size": 4512},
+      {"name": "November", "size": 4584},
+      {"name": "December", "size": 2743}
+     ]
+    },
+    {
+     "name": "EUR",
+     "children": [
+      {"name": "January", "size": 3},
+      {"name": "February", "size": 32},
+      {"name": "March", "size": 67},
+      {"name": "April", "size": 74},
+      {"name": "May", "size": 39},
+      {"name": "June", "size": 32},
+      {"name": "July", "size": 64},
+      {"name": "August", "size": 43},
+      {"name": "September", "size": 38},
+      {"name": "October", "size": 38},
+      {"name": "November", "size": 64},
+      {"name": "December", "size": 73}
+     ]
+    }
+   ]
+  },
+  {
+   "name": "BBVA",
+   "children": [
+    {
+     "name": "GBP",
+     "children": [
+      {"name": "January", "size": 38},
+      {"name": "February", "size": 38},
+      {"name": "March", "size": 64},
+      {"name": "April", "size": 73},
+      {"name": "May", "size": 38},
+      {"name": "June", "size": 32},
+      {"name": "July", "size": 64},
+      {"name": "August", "size": 73},
+      {"name": "September", "size": 38},
+      {"name": "October", "size": 32},
+      {"name": "November", "size": 64},
+      {"name": "December", "size": 73}
+     ]
+    },
+    {
+     "name": "EUR",
+     "children": [
+      {"name": "January", "size": 13938},
+      {"name": "February", "size": 32812},
+      {"name": "March", "size": 67154},
+      {"name": "April", "size": 7453},
+      {"name": "May", "size": 39318},
+      {"name": "June", "size": 38112},
+      {"name": "July", "size": 67114},
+      {"name": "August", "size": 7423},
+      {"name": "September", "size": 35938},
+      {"name": "October", "size": 38152},
+      {"name": "November", "size": 67154},
+      {"name": "December", "size": 7453}
+     ]
+    }
+   ]
+  },
+  {
+   "name": "EVO",
+   "children": [
+    {
+     "name": "GBP",
+     "children": [
+      {"name": "January", "size": 38},
+      {"name": "February", "size": 12},
+      {"name": "March", "size": 14},
+      {"name": "April", "size": 3},
+      {"name": "May", "size": 38},
+      {"name": "June", "size": 12},
+      {"name": "July", "size": 14},
+      {"name": "August", "size": 43},
+      {"name": "September", "size": 38},
+      {"name": "October", "size": 38},
+      {"name": "November", "size": 64},
+      {"name": "December", "size": 7}
+     ]
+    },
+    {
+     "name": "EUR",
+     "children": [
+      {"name": "January", "size": 39538},
+      {"name": "February", "size": 38512},
+      {"name": "March", "size": 67154},
+      {"name": "April", "size": 7435},
+      {"name": "May", "size": 39348},
+      {"name": "June", "size": 38142},
+      {"name": "July", "size": 67144},
+      {"name": "August", "size": 7443},
+      {"name": "September", "size": 43938},
+      {"name": "October", "size": 38142},
+      {"name": "November", "size": 67144},
+      {"name": "December", "size": 7434}
+     ]
+    }
+   ]
+  }
+ ]
+}

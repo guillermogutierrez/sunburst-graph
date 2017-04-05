@@ -1,0 +1,44 @@
+#main {
+  float: left;
+  width: 750px;
+}
+
+#sidebar {
+  float: right;
+  width: auto;
+}
+
+#sequence {
+  width: 600px;
+  height: 70px;
+}
+
+#legend {
+  padding: 10px 0 0 3px;
+}
+
+#sequence text, #legend text {
+  font-weight: 600;
+  fill: #fff;
+}
+
+#chart {
+  position: relative;
+}
+
+#chart path {
+  stroke: #fff;
+}
+
+#explanation {
+    position: absolute;
+    right: 15%;
+    top: 2em;
+    color: #666;
+    z-index: -1;
+    float: right;
+}
+
+#percentage {
+  font-size: 2.5em;
+}
