@@ -13,31 +13,46 @@
 			colors: <%=colors%>,
 			width: <%= width%>,
 			height: <%= height%>,
-			leyend: <%=leyendEnabled%>
+			leyend: <%=leyendEnabled%>,
+			colorSelector: "<%= autoColors ? "auto" : "provided" %>",
+			filterValue: <%= filterValue %>,
+			showText: <%= showText %>
 		};
 	
 		$('#sunburst').sunburst(options);
   	});
 </script>
 
-<div id="main">
-	<div class="title">
-		<h1>
-			<%= graphName %>
-		</h1>
+<div class="sunburst">
+	<div class="row">
+		<div class="title col-md-12">
+			<h1>
+				<%= graphName %>
+			</h1>
+		</div>
+	</div>	  
+	
+	<div class="row">
+		<div id="sequence" class="col-md-12"></div>
 	</div>
-  <div id="sequence"></div>
-  <div id="sunburst">        
-    <div id="explanation" style="visibility: hidden;">
-      <span id="percentage"></span><br/>
-        <%= explanation %>
-    </div>
-  </div>
-</div>
-
-<div id="sidebar">
-	<div id="leyend-container" style="visibility: hidden;">
-	  <input type="checkbox" id="togglelegend"> Legend<br/>
-	  <div id="legend" style="visibility: hidden;"></div>
+	
+	<div class="row">
+		<div id="explanation" style="visibility: hidden;">
+		      <span id="percentage"></span>
+		       <span> <%= explanation %> </span>
+	    </div>
+	</div>
+	
+	<div class="row">
+		<div id="main" class="col-md-8">		
+		  <div id="sunburst"></div>
+		</div>
+		
+		<div id="sidebar" class="col-md-4">
+			<div id="leyend-container" style="visibility: hidden;">
+			  <input type="checkbox" id="togglelegend"> Legend<br/>
+			  <div id="legend" style="visibility: hidden;"></div>
+			</div>
+		</div>
 	</div>
 </div>

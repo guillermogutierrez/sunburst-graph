@@ -25,10 +25,7 @@
 	<aui:input name="redirect" type="hidden" value="<%= configurationRenderURL %>" />
 
 	<div class="portlet-configuration-body-content">
-		<liferay-ui:tabs
-			names="general"
-			refresh="<%= false %>"
-		>
+		<liferay-ui:tabs names="general" refresh="<%= false %>">
 			<liferay-ui:section>
 				<div class="container-fluid-1280">
 					<aui:fieldset>
@@ -38,15 +35,21 @@
 						
 						<aui:input cssClass="lfr-input-text-container" label="Graph Explanation" name="preferences--explanation--" value="<%= explanation %>" />
 						
+						<aui:input id="colorsEngine" label="enable-auto-color" name="preferences--autoColors--" type="toggle-switch" value="<%= autoColors %>" />
+												
 						<aui:input cssClass="lfr-input-text-container" label="Colors" name="preferences--colors--" value="<%= colors %>" />
 						
-						<aui:input cssClass="lfr-input-text-container" label="Colors" name="preferences--width--" value="<%= width %>" />
+						<aui:input cssClass="lfr-input-text-container" label="Width" name="preferences--width--" value="<%= width %>" />
 						
-						<aui:input cssClass="lfr-input-text-container" label="Colors" name="preferences--height--" value="<%= height %>" />
+						<aui:input cssClass="lfr-input-text-container" label="Height" name="preferences--height--" value="<%= height %>" />
 						
 						<aui:input id="enableBreadcrumb" label="enable-chart-breadcrumb" name="preferences--breadcrumbEnabled--" type="toggle-switch" value="<%= breadcrumbEnabled %>" />
 						
 						<aui:input id="enableLeyend" label="enable-chart-leyend" name="preferences--leyendEnabled--" type="toggle-switch" value="<%= leyendEnabled %>" />
+						
+						<aui:input id="showText" label="enable-show-text" name="preferences--showText--" type="toggle-switch" value="<%= showText %>" />
+						
+						<aui:input cssClass="lfr-input-text-container" label="Filter" name="preferences--filter--" value="<%= filterValue %>" />
 								
 					</aui:fieldset>
 				</div>

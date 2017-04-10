@@ -15,22 +15,24 @@
         this.settings = settings;  
         this.colors = settings.colors;
         this.color = d3.scale.category20c();
+        this.colorSelector = settings.colorSelector;
+        this.leyendItems = {};
     };
     Container.prototype = {
           start: function(){
              if (this.settings.breadcrumb) {
                  this.breadcrumb.build();
-             }
-             
-             if (this.settings.leyend) {
-                 this.leyend.drawLegend();
-             }
+             } 
              
              d3.json(this.settings.jsonURL, function(error, root) {
                  svgCanvas.addNodes(root);    
                  totalSize = svgCanvas.graph.size();
                  EventController = new EventController();
                  EventController.initialize();
+                 
+                 if (svgCanvas.settings.leyend) {
+                     svgCanvas.leyend.drawLegend();
+                 }
              });
              
           },
@@ -70,10 +72,16 @@
               return this.colors;
           },
           getColor: function(key){
-              return this.colors[key];
+              if (this.colorSelector === 'auto'){
+                  return this.color((key.children ? key : key.parent).name);
+              }
+              return this.colors[key.name];
           },
           getColorNode: function(d){
-              return this.color((d.children ? d : d.parent).name);
+              return d.depth ? this.getColor(d) : "transparent";
+          },
+          addLeyendNode: function(d){
+              svgCanvas.leyendItems[d.name] = svgCanvas.getColorNode(d);
           }
     };
     
@@ -98,7 +106,7 @@
            // Add breadcrumb and label for entering nodes.
            var entering = g.enter().append("svg:g");
    
-           entering.append("svg:polygon").attr("points", this.breadcrumbPoints).style("fill", function(d) { return d.depth ? svgCanvas.getColorNode(d) : "transparent" });
+           entering.append("svg:polygon").attr("points", this.breadcrumbPoints).style("fill", function(d) { return svgCanvas.getColorNode(d)});
    
            entering.append("svg:text")
                .attr("x", (dimensions.w + dimensions.t) / 2)
@@ -154,18 +162,18 @@
             var li = {
               w: 200, h: 30, s: 3, r: 3
             };
-    
+                
             var legend = this.container.append("svg:svg")
                 .attr("width", li.w)
-                .attr("height", d3.keys(svgCanvas.getColors()).length * (li.h + li.s));
-    
-            var g = legend.selectAll("g")
-                .data(d3.entries(svgCanvas.getColors()))
-                .enter().append("svg:g")
-                .attr("transform", function(d, i) {
-                        return "translate(0," + i * (li.h + li.s) + ")";
-                     });
-    
+                .attr("height", (Object.keys(svgCanvas.leyendItems).length) * (li.h + li.s) );
+
+            g = legend.selectAll("g")
+            .data(d3.entries(svgCanvas.leyendItems))
+            .enter().append("svg:g")
+            .attr("transform", function(d, i) {
+                    return "translate(0," + i * (li.h + li.s) + ")";
+                 });
+            
             g.append("svg:rect")
                 .attr("rx", li.r)
                 .attr("ry", li.r)
@@ -200,7 +208,7 @@
             .append("g")
             .attr("transform", "translate(" + settings.width / 2 + "," + (settings.height / 2 + 10) + ")");
         
-        this.showText = true;
+        this.showText = settings.showText;
         
         this.text = null;
         
@@ -213,14 +221,22 @@
             .endAngle(function(d) {return Math.max(0, Math.min(2 * Math.PI, svgCanvas.graph.x(d.x + d.dx))); })
             .innerRadius(function(d) {return Math.max(0, svgCanvas.graph.y(d.y)); })
             .outerRadius(function(d) {return Math.max(0, svgCanvas.graph.y(d.y + d.dy)); });
+        
+        this.filterValue = settings.filterValue;
     };
     Graph.prototype={
         addNodes: function(root){
             this.chart.append("svg:circle").attr("r", this.radius).style("opacity", 0);
             
-            var g = this.chart.selectAll("g").data(this.partition.nodes(root).filter(function(d) {return (d.dx > 0.005); })).enter().append("g");
+            var g = this.chart.selectAll("g").data(this.partition.nodes(root).filter(function(d) {
+                if (d.dx > svgCanvas.graph.filterValue){
+                    svgCanvas.addLeyendNode(d);
+                    return true;
+                }
+                return false; 
+            })).enter().append("g");
             
-            this.path = g.append("path").attr("d", this.arc).attr("fill-rule", "evenodd").style("fill", function(d) { return d.depth ? svgCanvas.getColorNode(d) : "transparent" });
+            this.path = g.append("path").attr("d", this.arc).attr("fill-rule", "evenodd").style("fill", function(d) { return svgCanvas.getColorNode(d); });
             
             if (this.showText){
                 this.text = g.append("text")
@@ -372,10 +388,13 @@
             // These are the defaults.
             jsonURL: "http://localhost:8080/documents/20147/0/flare.json/a0e0a563-7ace-fcdc-6511-13f74f6d90a0?download=true",
             color: {},
+            colorSelector: 'auto',
             width: 750,
             height: 600,
             breadcrumb: true,
-            leyend: true
+            leyend: true,
+            filterValue: 0.005
+            
         }, options );
         
 	  	svgCanvas = new Container(settings);    

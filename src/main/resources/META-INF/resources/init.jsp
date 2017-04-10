@@ -20,6 +20,9 @@ String explanation = portletPreferences.getValue("explanation", "");
 String colors = portletPreferences.getValue("colors", "");
 String width = portletPreferences.getValue("width", "700");
 String height = portletPreferences.getValue("height", "650");
+Float filterValue = GetterUtil.getFloat(portletPreferences.getValue("filter", "0.005"));
 Boolean breadcrumbEnabled = GetterUtil.getBoolean(portletPreferences.getValue("breadcrumbEnabled", ""), Boolean.FALSE);
 Boolean leyendEnabled = GetterUtil.getBoolean(portletPreferences.getValue("leyendEnabled", ""), Boolean.FALSE);
+Boolean autoColors = GetterUtil.getBoolean(portletPreferences.getValue("autoColors", ""), Boolean.FALSE);
+Boolean showText = GetterUtil.getBoolean(portletPreferences.getValue("showText", ""), Boolean.FALSE);
 %>
